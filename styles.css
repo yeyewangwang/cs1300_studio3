@@ -1,7 +1,21 @@
 #cs1300-gallery {
   background-color: lightblue;
+  margin: 2px;
+  padding: 2px;
+  font-family: 'Roboto', sans-serif;
 }
 
 .gallery-container {
   /* TODO add styles (hint: use flex!) https://www.w3schools.com/cssref/ */
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.gallery-item {
+  padding: 6px;
+}
+
+.gallery-item:hover {
+  border: 12px;
 }

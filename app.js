@@ -12,12 +12,12 @@ const apiRequest = async () => {
    */
 
   // TODO fill in your own port number 
-  const PORT_NUMBER = "";
+  const PORT_NUMBER = "8010";
 
-  const baseUrl = `http://localhost:${PORT_NUMBER}/proxy/api/`
+  const baseUrl = `http://localhost:${PORT_NUMBER}/proxy/api/`;
 
   // This endpoint (https://www.fruityvice.com/doc/index.html#api-GET-getAll) returns a list of all the fruits and their info, feel free to play around with different endpoints!
-  const endpoint = "fruit/all"
+  const endpoint = "fruit/all";
 
   // Making a fetch request to an API endpoint
   // Note: a fetch request is an asynchronous operation, and `await` tells the program to wait until the request has been completed before continuing
@@ -43,12 +43,30 @@ const updatePage = async () => {
   // console.log(fruitsArray);
 
   // TODO: Use either `map` and/or `filter` to extract some data from the array of fruit objects
-  // For example, find "name of all fruits whose sugar > 15", 
+  // For example, find "name of all fruits whose sugar > 15",
+  const filtered_fruits = fruitsArray.filter(fruit => fruit.nutritions.sugar > 15);
+  // console.log(filtered_fruits);
 
-  // TODO: Create a new HTML element to display your data 
+  // TODO: Create a new HTML element to display your data
+  table_html = "<table class=\"fruits-table\">" +
+      "<tr>\n" +
+      "    <th>Fruit</th>\n" +
+      "    <th>Genus</th>\n" +
+      "    <th>Sugar Content</th>\n" +
+      "  </tr>";
+  for (let i = 0; i < filtered_fruits.length; i++) {
+    table_html += "<tr>\n" +
+        "  <td>" + filtered_fruits[i].name + "</td>\n" +
+        "  <td>" + filtered_fruits[i].genus + "</td>\n" +
+        "  <td>" + filtered_fruits[i].nutritions.sugar + "</td>\n" +
+        "</tr>";
+  }
+  table_html += "</table>";
 
   // TODO: Append your new element to the page
-
+  const newElement = document.createElement('div');
+  newElement.innerHTML = table_html;
+  gallery.append(newElement);
 }
 
 // SAMPLE CODE of how to create and append a new HTML element to the page

@@ -5,7 +5,10 @@
     <!-- import javascript variables and functions -->
     <script src="app.js"></script>
     <!-- import CSS styles -->
-    <link rel="stylesheet" href="styles.css" /> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
   </head>
 
   <!-- page content goes into <body> -->
@@ -15,12 +18,29 @@
       <p>Add your own images and styles!</p>
 
       <!-- TODO: PART I Add your own images and use CSS flex to make sure they work on different screen sizes -->
-      <div class="gallery-item-container">
-        <img class="gallery-item" src="./assets/jeff.jpg" alt="jeff watching u">
+      <div class="gallery-container">
+
+        <img src="./assets/jeff.jpg" class="gallery-item" alt="jeff watching u">
+
+
+        <img src="./assets/jeff.jpg" class="gallery-item" alt="jeff watching u">
+
+
+        <img src="./assets/jeff.jpg" class="gallery-item" alt="jeff watching u">
+
+
+        <img src="./assets/jeff.jpg" class="gallery-item" alt="jeff watching u">
+
+
+        <img src="./assets/jeff.jpg" class="gallery-item" alt="jeff watching u">
+
+
+        <img src="./assets/jeff.jpg" class="gallery-item" alt="jeff watching u">
+
       </div>
 
       <!-- TODO: PART II Uncomment the line below, and hook up this button to display data from an API -->
-      <!-- <button onclick="">Press this button to display some fruit data</button> -->
+       <button onclick="updatePage()">Press this button to display some fruit data</button>
     </div>
   </body>
 
